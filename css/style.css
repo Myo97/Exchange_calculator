@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;400;700&display=swap');
+@font-face{
+    font-family: "mm";
+    font-weight: normal;
+    src: url(../font/NotoSansMyanmar-Regular.ttf);
+}
+@font-face{
+    font-family: "mm";
+    font-weight: bold;
+    src: url(../font/NotoSansMyanmar-Bold.ttf);
+}
+:root{
+    --primary : #2Cd1ee;
+    --primarySoft : #2cd1eed6;
+    --secondry : #707070;
+    --secondarySoft : #ddd;
+    --secondarylight : #f3f3f3;
+    --light : #ffffff;
+    --dark : #000000;
+    --br : 5px;
+}
+.mm{
+    font-family: "mm";
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Yanone Kaffeesatz', 'mm';
+    color: var(--secondry);
+}
+body{
+    transition: 0.5s;
+}
+.divider{
+    background-color: var(--secondry);
+    height: 5px;
+    border-radius: var(--br);
+}
+.app{
+    width: 700px;
+    margin: 100px auto;
+}
+.output{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.brand-container{
+    display: flex;
+    align-items: center;
+}
+.logo{
+    width: 50px;
+}
+.brand-name{
+    margin-left: 10px;
+    font-size: 30px;
+}
+.result-container{
+    display: flex;
+    align-items: center;
+}
+.result{
+    font-size: 45px;
+}
+.calc{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.container{
+    width: 150px;
+}
+
+.input, .from, .to{
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: var(--br);
+    border: 1px solid var(--secondry);
+}
+.input{
+    text-align: right;
+}
+.container label{
+    display: block;
+    margin-bottom: 10px;
+}
+.calc-btn{
+    width: 100%;
+    height: 100%;
+    border-radius: var(--br);
+    background-color: var(--primary);
+    color: var(--light);
+    border: 1px solid var(--primary);
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.calc-btn:active{
+    background-color: var(--primarySoft)
+}
+/* Chrome, Safari, Edge, Opera to hide input number arrow*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox  to hide inputNumber arrow*/
+input[type=number] {
+  -moz-appearance: textfield;
+}
+select {
+    /* Hide default arrow */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none; 
+  }
+select{
+    position: relative;
+    
+  }
+
+select:focus,input:focus,button:focus{
+    outline: none;
+}
+.history {
+    margin-top: 10px;
+    /* border-collapse: collapse; */
+    width: 100%;
+  }
+  
+.history td, .history th {
+    padding: 8px;
+    border-radius: var(--br);
+  }
+
+tr{
+    background-color: var(--secondarylight);
+}
+  
+/* .history tr:nth-child(even){background-color: #f2f2f2;} */
+  
+.history tr:hover {
+    background-color: var(--secondarySoft);
+}
+.history tr:hover td:last-child{
+    display: block;
+}
+
+.history th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--primary);
+    color: var(--light);
+  }
+.history th:last-child{
+    text-align: center;
+}
+
+.history tr td:last-child{
+    text-align: right;
+    
+}
+.rowspacer td{
+    text-align: center !important;
+}
+.mode-change{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: var(--night-secondary-soft);
+    color: var(--light);
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}
+.mode-change .fas{
+    color: var(--light);
+    font-size: 30px;
+}
+@media screen and (max-width: 480px){
+    *{
+        font-size: 25px;
+    }
+    .app{
+    width: 95%;
+    margin: 30px auto;
+    }
+    .output{
+    flex-flow: column;
+    align-items: flex-end;
+    }
+    .brand-container{
+    width: 100%;
+    }
+    .calc{
+    flex-wrap: wrap;
+    }
+
+    .container{
+    width: 100%;
+    margin-top: 20px;
+    }
+    .fromcontainer, .tocontainer{
+    width: 48%;
+    }
+    .input, .from, .to{
+    padding: 15px 10px;
+    }
+    .calc-btn{
+    padding: 15px 0;
+    }
+}
+
